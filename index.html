@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exergy Office Climate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">EXERGY OFFICE</h1>
+            <div class="status-indicator" id="status">
+                <span class="status-dot"></span>
+                <span class="status-text">CONNECTING</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="thermostat-panel">
+                <div class="temp-display">
+                    <div class="current-temp">
+                        <span class="temp-value" id="currentTemp">--</span>
+                        <span class="temp-unit">°F</span>
+                    </div>
+                    <div class="temp-label">CURRENT</div>
+                </div>
+
+                <div class="climate-details">
+                    <div class="detail-item">
+                        <span class="detail-label">TARGET</span>
+                        <span class="detail-value" id="targetTemp">--°F</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">MODE</span>
+                        <span class="detail-value" id="hvacMode">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">STATE</span>
+                        <span class="detail-value" id="hvacState">--</span>
+                    </div>
+                </div>
+
+                <div class="activity-indicator">
+                    <div class="activity-bar" id="activityBar"></div>
+                </div>
+            </div>
+
+            <div class="qr-section">
+                <div class="qr-card">
+                    <div class="qr-label">LIGHTNING TIP</div>
+                    <div class="qr-code" id="qr1"></div>
+                </div>
+                <div class="qr-card">
+                    <div class="qr-label">LIGHTNING TIP</div>
+                    <div class="qr-code" id="qr2"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="update-time">
+                LAST UPDATE: <span id="lastUpdate">--:--:--</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
