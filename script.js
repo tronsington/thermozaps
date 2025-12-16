@@ -167,3 +167,21 @@ document.getElementById('refreshButton').addEventListener('click', async functio
         button.innerHTML = '<span class="refresh-icon">↻</span>REFRESH DATA';
     }, 500);
 });
+// Manual refresh button handler
+document.getElementById('refreshButton').addEventListener('click', async function() {
+    const button = this;
+    
+    // Add refreshing state
+    button.classList.add('refreshing');
+    const originalContent = button.innerHTML;
+    button.innerHTML = '<span class="refresh-icon">↻</span>REFRESHING...';
+    
+    // Fetch new data
+    await fetchThermostatData();
+    
+    // Remove refreshing state after a brief delay
+    setTimeout(() => {
+        button.classList.remove('refreshing');
+        button.innerHTML = originalContent;
+    }, 500);
+});
