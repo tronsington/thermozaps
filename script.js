@@ -150,3 +150,20 @@ if (document.readyState === 'loading') {
 } else {
     init();
 }
+// Manual refresh button handler
+document.getElementById('refreshButton').addEventListener('click', async function() {
+    const button = this;
+    
+    // Add refreshing state
+    button.classList.add('refreshing');
+    button.textContent = 'REFRESHING...';
+    
+    // Fetch new data
+    await fetchThermostatData();
+    
+    // Remove refreshing state after a brief delay
+    setTimeout(() => {
+        button.classList.remove('refreshing');
+        button.innerHTML = '<span class="refresh-icon">↻</span>REFRESH DATA';
+    }, 500);
+});
