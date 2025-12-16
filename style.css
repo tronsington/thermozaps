@@ -318,6 +318,61 @@ body::before {
     animation: pulse-glow 3s ease-in-out infinite;
 }
 
+.refresh-button {
+    margin-top: 16px;
+    padding: 14px 28px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.refresh-button:hover {
+    background: var(--bg-secondary);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 217, 255, 0.2);
+}
+
+.refresh-button:active {
+    transform: translateY(0);
+}
+
+.refresh-button.refreshing {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.refresh-button.refreshing .refresh-icon {
+    animation: spin 1s linear infinite;
+}
+
+.refresh-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .lightning-icon {
     font-size: 16px;
     animation: zap 2s ease-in-out infinite;
