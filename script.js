@@ -17,6 +17,7 @@ const elements = {
     targetTemp: document.getElementById('targetTemp'),
     hvacMode: document.getElementById('hvacMode'),
     hvacState: document.getElementById('hvacState'),
+    hashrate: document.getElementById('hashrate'),
     activityBar: document.getElementById('activityBar'),
     status: document.getElementById('status'),
     statusText: document.querySelector('.status-text'),
@@ -58,14 +59,18 @@ async function fetchThermostatData() {
 
 // Update UI with thermostat data
 function updateUI(data) {
-    const attributes = data.attributes || {};
-    const state = data.state || 'unknown';
-    
+    // Handle new response format with climate and hashrate (backward compatible)
+    const climateData = data.climate || data;
+    const hashrateData = data.hashrate || null;
+
+    const attributes = climateData.attributes || {};
+    const state = climateData.state || 'unknown';
+
     // Update current temperature
     const currentTemp = attributes.current_temperature;
     if (currentTemp !== undefined) {
         elements.currentTemp.textContent = Math.round(currentTemp);
-        
+
         // Apply color based on HVAC action
         const hvacAction = attributes.hvac_action || 'idle';
         elements.currentTemp.className = 'temp-value';
@@ -75,24 +80,38 @@ function updateUI(data) {
             elements.currentTemp.classList.add('cooling');
         }
     }
-    
+
     // Update target temperature
     const targetTemp = attributes.temperature;
     if (targetTemp !== undefined) {
         elements.targetTemp.textContent = `${Math.round(targetTemp)}°F`;
     }
-    
+
     // Update HVAC mode
     const hvacMode = attributes.hvac_mode || state;
     elements.hvacMode.textContent = hvacMode.toUpperCase();
-    
+
     // Update HVAC state/action
     const hvacAction = attributes.hvac_action || 'idle';
     elements.hvacState.textContent = hvacAction.toUpperCase();
-    
+
+    // Update hashrate
+    if (hashrateData && hashrateData.state && hashrateData.state !== 'unavailable') {
+        const hashrateValue = parseFloat(hashrateData.state);
+        const hashrateUnit = hashrateData.attributes?.unit_of_measurement || '';
+
+        if (!isNaN(hashrateValue)) {
+            elements.hashrate.textContent = `${hashrateValue.toFixed(2)} ${hashrateUnit}`;
+        } else {
+            elements.hashrate.textContent = '--';
+        }
+    } else {
+        elements.hashrate.textContent = '--';
+    }
+
     // Update activity bar
     updateActivityBar(hvacAction);
-    
+
     // Update last update time
     updateLastUpdateTime();
 }
