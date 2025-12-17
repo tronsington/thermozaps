@@ -2,7 +2,7 @@
 
 A secure, real-time thermostat dashboard that displays your Home Assistant climate data with Lightning Network QR codes. Built with a modern industrial aesthetic.
 
-## 🎨 Features
+## Features
 
 - **Real-time thermostat monitoring** - Updates every 30 seconds
 - **Secure API handling** - Your Home Assistant token never touches the browser
@@ -10,7 +10,7 @@ A secure, real-time thermostat dashboard that displays your Home Assistant clima
 - **Responsive design** - Works beautifully on desktop, tablet, and mobile
 - **Visual indicators** - Color-coded heating/cooling states with animations
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 ### Step 1: Create GitHub Repository
 
@@ -65,7 +65,7 @@ git push -u origin main
 | Name | Value | Notes |
 |------|-------|-------|
 | `HA_URL` | `https://demo.exergyheat.com` | Your Home Assistant URL (no trailing slash) |
-| `HA_TOKEN` | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` | Your Long-Lived Access Token |
+| `HA_TOKEN` | `yourtokenkey...` | Your Long-Lived Access Token |
 | `ENTITY_ID` | `climate.exergy_office` | Your thermostat entity ID |
 
 5. Make sure to select "Production", "Preview", and "Development" for each variable
@@ -83,7 +83,7 @@ git push -u origin main
 
 Your dashboard will be live at: `https://your-project-name.vercel.app`
 
-## 🔒 Security Notes
+## Security Notes
 
 ### How Your Token is Protected
 
@@ -141,14 +141,14 @@ Currently displays Fahrenheit. To change to Celsius:
 1. Edit `index.html` line 23: Change `°F` to `°C`
 2. Edit `script.js` line 63: Change `°F` to `°C`
 
-## 📱 Browser Compatibility
+## Browser Compatibility
 
 - ✅ Chrome/Edge (recommended)
 - ✅ Firefox
 - ✅ Safari
 - ✅ Mobile browsers
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "OFFLINE" Status
 
@@ -200,7 +200,7 @@ your-repo/
 └── README.md           # This file
 ```
 
-## 🤝 Support
+## Support
 
 If you run into issues:
 1. Check the troubleshooting section above
@@ -208,7 +208,7 @@ If you run into issues:
 3. Verify your Home Assistant is accessible
 4. Check that your token hasn't expired
 
-## 📜 License
+## License
 
 MIT License - Feel free to use and modify!
 
