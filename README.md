@@ -64,9 +64,9 @@ git push -u origin main
 
 | Name | Value | Notes |
 |------|-------|-------|
-| `HA_URL` | `https://demo.exergyheat.com` | Your Home Assistant URL (no trailing slash) |
+| `HA_URL` | `https://yourhomeassistant.com` | Your Home Assistant URL (no trailing slash) |
 | `HA_TOKEN` | `yourtokenkey...` | Your Long-Lived Access Token |
-| `ENTITY_ID` | `climate.exergy_office` | Your thermostat entity ID |
+| `ENTITY_ID` | `climate.your_thermostat` | Your thermostat entity ID |
 
 5. Make sure to select "Production", "Preview", and "Development" for each variable
 6. Click "Save"
@@ -115,7 +115,7 @@ They will **never** see your Home Assistant URL or access token.
    - Rotate tokens periodically
    - Revoke tokens if compromised
 
-## 🛠️ Customization
+## Customization
 
 ### Change Refresh Rate
 
