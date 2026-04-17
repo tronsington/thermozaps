@@ -126,7 +126,7 @@ function updateActivityBar(hvacAction) {
         elements.activityBar.style.width = '100%';
     } else if (hvacAction === 'cooling') {
         elements.activityBar.classList.add('active');
-        elements.activityBar.style.background = 'linear-gradient(90deg, #4ecdc4, #00d9ff)';
+        elements.activityBar.style.background = 'linear-gradient(90deg, #cc2200, #ff1a1a)';
         elements.activityBar.style.width = '100%';
     } else if (hvacAction === 'idle') {
         elements.activityBar.style.width = '0%';
