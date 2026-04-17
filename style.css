@@ -5,10 +5,10 @@
     --text-primary: #e8edf2;
     --text-secondary: #8b95a1;
     --text-tertiary: #5a6470;
-    --accent-primary: #00d9ff;
-    --accent-glow: rgba(0, 217, 255, 0.2);
+    --accent-primary: #ff1a1a;
+    --accent-glow: rgba(255, 26, 26, 0.2);
     --accent-heat: #ff6b35;
-    --accent-cool: #4ecdc4;
+    --accent-cool: #cc2200;
     --border: rgba(255, 255, 255, 0.08);
     --shadow: rgba(0, 0, 0, 0.4);
 }
@@ -40,7 +40,7 @@ body::before {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(ellipse at 20% 30%, rgba(0, 217, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 30%, rgba(255, 26, 26, 0.05) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 70%, rgba(255, 107, 53, 0.03) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
@@ -214,7 +214,7 @@ body::before {
 
 .temp-value.cooling {
     color: var(--accent-cool);
-    text-shadow: 0 0 40px rgba(78, 205, 196, 0.3);
+    text-shadow: 0 0 40px rgba(204, 34, 0, 0.3);
 }
 
 .temp-unit {
@@ -372,7 +372,7 @@ body::before {
 
 .qr-card:hover {
     border-color: var(--accent-primary);
-    box-shadow: 0 0 24px rgba(0, 217, 255, 0.1);
+    box-shadow: 0 0 24px rgba(255, 26, 26, 0.1);
     transform: scale(1.02);
 }
 
